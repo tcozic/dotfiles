@@ -1,16 +1,9 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [ ! -d $ZINIT_HOME ]; then 
-	mkdir -p "$(dirname $ZINIT_HOME)"
-	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
-export PATH=$PATH:/home/tcozic/.local/bin
 OHMYPOSH_BIN="${XDG_DATA_HOME:-${HOME}/.local/bin}/oh-my-posh"
-if [ ! -f "$OHMYPOSH_BIN" ]; then 
-	echo $OHMYPOSH_HOME
-	curl -s https://ohmyposh.dev/install.sh | bash -s
-fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH=$PATH:/home/tcozic/.local/bin
 source "${ZINIT_HOME}/zinit.zsh"
 eval "$(oh-my-posh init zsh --config 'amro')"
 
@@ -65,4 +58,4 @@ alias c='clear'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
