@@ -53,5 +53,5 @@ alias ls='ls --color'
 alias c='clear'
 
 eval "$(zoxide init --cmd cd zsh)"
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
