@@ -38,13 +38,16 @@ return {
         vim.lsp.config('lua_ls', {
           capabilities = capabilities
         })
+        vim.lsp.config('clangd', {
+          capabilities = capabilities
+        })
 
         -- Enable LSP servers (they will activate based on filetypes)
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('solargraph')
         vim.lsp.enable('html')
         vim.lsp.enable('lua_ls')
-      
+        vim.lsp.enable('clangd')
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
