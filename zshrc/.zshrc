@@ -3,7 +3,7 @@ OHMYPOSH_BIN="${XDG_DATA_HOME:-${HOME}/.local/bin}/oh-my-posh"
 
 export PATH=$PATH:/home/tcozic/.local/bin
 source "${ZINIT_HOME}/zinit.zsh"
-eval "$(oh-my-posh init zsh --config 'amro')"
+eval "$($OHMYPOSH_BIN init zsh --config 'amro')"
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -52,26 +52,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias c='clear'
 
-FZF_KEY_BINDINGS_PATH="/usr/share/doc/fzf/examples/key-bindings.zsh"
-FZF_COMPLETION_PATH="/usr/share/doc/fzf/examples/completion.zsh"
-
-echo "Loading FZF key bindings..."
-if [ -f "$FZF_KEY_BINDINGS_PATH" ]; then
-    # Use direct sourcing as a robust, non-version-dependent method
-    source "$FZF_KEY_BINDINGS_PATH"
-    echo "✅ FZF key-bindings loaded successfully from: $FZF_KEY_BINDINGS_PATH"
-else
-    echo "❌ FZF key-bindings file not found at $FZF_KEY_BINDINGS_PATH. Skipping."
-fi
-
-
-echo "Loading FZF completion logic..."
-if [ -f "$FZF_COMPLETION_PATH" ]; then
-    source "$FZF_COMPLETION_PATH"
-    echo "✅ FZF completion loaded successfully from: $FZF_COMPLETION_PATH"
-else
-    echo "⚠️ Warning: FZF completion file not found at $FZF_COMPLETION_PATH. Skipping."
-fi
 eval "$(zoxide init --cmd cd zsh)"
 
 
