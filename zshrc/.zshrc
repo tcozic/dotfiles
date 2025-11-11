@@ -1,8 +1,6 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 OHMYPOSH_BIN="${XDG_DATA_HOME:-${HOME}/.local/bin}/oh-my-posh"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH=$PATH:/home/tcozic/.local/bin
 source "${ZINIT_HOME}/zinit.zsh"
 eval "$(oh-my-posh init zsh --config 'amro')"
